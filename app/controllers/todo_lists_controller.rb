@@ -67,7 +67,7 @@ class TodoListsController < ApplicationController
       @todo_list = TodoList.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
+    # Never trust parameters from the scary internet, only allow the white list through.
     def todo_list_params
       params.require(:todo_list).permit(:title, :description)
     end
