@@ -6,14 +6,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Font+Name">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
     
-    <%= csp_meta_tag %>
-
-
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
-</html>
+    <div class="container">
+      <%= yield %>
+    </div>
+    
+    </body>
+    </html>
+    
