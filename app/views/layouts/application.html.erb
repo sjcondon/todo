@@ -13,9 +13,10 @@
     <%= yield %>
     </div>
     
-    <% if session[:current_user_id] %>
+    <% if session[:current_user_id] %> #are you logged in?
     <nav>
-    You are logged in as: <%= session[:current_user_id] %>
+    You are logged in as: <%= @current_user.email %>
+    | <a href = "/logout">Logout</a>
     </nav>
     <% end %>
 
