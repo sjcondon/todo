@@ -9,10 +9,19 @@
     </head>
     <body>
     
-    <div class="container">
-      <%= yield %>
+    <div class="container"> 
+    <%= yield %>
     </div>
     
+    <% if session[:current_user_id] %>
+    <nav>
+    You are logged in as: <%= session[:current_user_id] %>
+    </nav>
+    <% end %>
+
+    
+    
     </body>
+
     </html>
     
