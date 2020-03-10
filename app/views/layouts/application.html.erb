@@ -3,17 +3,19 @@
 <head>
   <title>Todo</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  
   <%= csrf_meta_tags %>
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Font+Name">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    </head>
-    <body>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
     
     <div class="container"> 
     <%= yield %>
     </div>
     
-    <% if session[:current_user_id] %> #are you logged in?
+    
+    <% if session[:current_user_id] %> 
     <nav>
     You are logged in as: <%= @current_user.email %>
     | <a href = "/logout">Logout</a>

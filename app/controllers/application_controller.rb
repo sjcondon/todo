@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     
     #Action / end pt to Http request
     def home
-  
+      
     end
 
   private
@@ -21,6 +21,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  
+
 end
   

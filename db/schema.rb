@@ -15,15 +15,19 @@ ActiveRecord::Schema.define(version: 2020_03_06_024031) do
   create_table "todo_items", force: :cascade do |t|
     t.string "content"
     t.integer "todo_list_id"
+    t.integer "user_id"
     t.datetime "completed"
+    t.datetime "completed_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["todo_list_id"], name: "index_todo_items_on_todo_list_id"
+    t.index ["user_id"], name: "index_todo_items_on_user_id"
   end
 
   create_table "todo_lists", force: :cascade do |t|
     t.string "title"
     t.text "description"
+    t.boolean "private"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
