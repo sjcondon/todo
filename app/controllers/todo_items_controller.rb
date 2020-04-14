@@ -3,10 +3,10 @@ class TodoItemsController < ApplicationController
 	# before_action :set_todo_item, except: [:create]
 
 	def index
-		@todo_items = TodoList.find(params[:todo_list_id]) #finding the list from the params via list.id then grabbing the .items from that list
-		@todo_items = @todo_items.order(:title)
+		@todo_items = TodoList.find().items.order #finding the list from the params via list.id then grabbing the .items from that list
 	end
-	end
+end
+	
 	
 	def new
 		@todo_list = TodoList.find(params[:todo_list_id])
