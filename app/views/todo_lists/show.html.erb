@@ -4,14 +4,18 @@
 <p class="todo_list_sub_title"><%= @todo_list.description %></p>
 
 <div id="todo_items_wrapper">
-	<%= render ‘todo_items/todo_items’%>
+	<% @todo_list.todo_items.each do |item| %>
 	<div id="form">
-		<%= render "todo_items/form" %>
+		 <%= item.content %>
+		<%= button_to "Delete", todo_list_todo_item_path(@todo_list, item), method: "delete" %>
 	</div>
+	<% end %>
+	<%= render partial: 'todo_items/form', locals: {todo_item: TodoItem.new(todo_list_id: params[:todo_list_id])} %>  
 </div>
 
+
 <div class="links">
-	<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
-	<%= link_to 'Delete', todo_list_path(@todo_list), method: :delete %> |
-  <%= link_to 'Back', todo_lists_path %>
+	<%= button_to 'Edit', edit_todo_list_path(@todo_list), method: :get %> 
+	<%= button_to 'Delete', todo_list_path(@todo_list), method: :delete %> 
+  <%= button_to 'Back', todo_lists_path, method: :get%>
 </div>

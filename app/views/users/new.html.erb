@@ -1,0 +1,18 @@
+<h1> Sign up to Create a Todo List</h1>
+
+<!-- <form action="/signup" method="POST>
+
+    <imput type="submit" value="Signup" />
+
+    </form> -->
+
+<%= form_tag("/signup") do %>
+    <p>
+        <%= label_tag "Email" %>
+        <%= text_field_tag :"user[email]" %>
+        <%= label_tag "Password" %>
+        <%= password_field_tag :"user[password]" %>
+    </p>
+        <%= submit_tag "Sign up"%>
+        <p> <%= link_to "Home", root_path %> </p>
+    <% end %>

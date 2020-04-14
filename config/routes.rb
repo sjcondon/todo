@@ -8,16 +8,19 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :todo_items, only: [:index, :destroy]
   resources :users, only: [:create, :new]
   resources :sessions, only: [:create, :new, :destroy]
   
   get '/signup', to: 'users#new'
-  post 'users', to: 'users#create'
+  post '/signup', to: 'users#create'
   get '/login', to: "sessions#new"
-  post '/sessions', to: "sessions#create"
+  get '/login', to: "sessions#create"
   get '/logout', to: "sessions#destroy"
   
-  root "todo_lists#index"
+  post 'users', to: 'users#create'
+  post '/sessions', to: "sessions#create"
+
+  
+  root "welcome#home"
 end
 
