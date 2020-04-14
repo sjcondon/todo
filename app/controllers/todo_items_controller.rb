@@ -6,8 +6,6 @@ class TodoItemsController < ApplicationController
 		@todo_items = TodoList.find(params[:todo_list_id]).todo_items.order(:title) #finding the list from the params via list.id then grabbing the .items from that list
 	end
 
-	def show
-	end
 	
 	def new
 		@todo_list = TodoList.find(params[:todo_list_id])
