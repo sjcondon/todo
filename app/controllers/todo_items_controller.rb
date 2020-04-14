@@ -3,10 +3,11 @@ class TodoItemsController < ApplicationController
 	# before_action :set_todo_item, except: [:create]
 
 	def index
-		@todo_items = TodoList.find().items.order #finding the list from the params via list.id then grabbing the .items from that list
+		@todo_items = TodoList.find(params[:todo_list_id]).todo_items.order(:title) #finding the list from the params via list.id then grabbing the .items from that list
 	end
-end
-	
+
+	def show
+	end
 	
 	def new
 		@todo_list = TodoList.find(params[:todo_list_id])
@@ -45,7 +46,7 @@ end
 	def todo_item_params
 		params[:todo_item].permit(:content)
 	end
-
+end
 
 
 # resources => gives us a bunch of CRUD routes
