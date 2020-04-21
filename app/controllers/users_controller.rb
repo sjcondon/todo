@@ -3,17 +3,17 @@ class UsersController < ApplicationController
 
 # GET/register - New user Action
     def new
-        if session[:current_user_id]
-            redirect_to "/", :notice => "Already logged in"
-        end
+       @user = User.new
     end
 
 #POST/users - Create the users Action
     def create
         @user = User.new(user_params)
-        @user.save
-
-        redirect_to "/login"
+        if @user.save
+            redirect_to "/login"
+        else
+            render :new
+        end
     end
  
 private

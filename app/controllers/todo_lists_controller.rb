@@ -1,9 +1,10 @@
 class TodoListsController < ApplicationController
   before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
+  # before_action :authenication_required
   
   def index
-    @todo_lists = TodoList.all
-    @todo_lists = TodoList.ordered_by_title
+      @todo_lists = TodoList.all
+      @todo_lists = TodoList.ordered_by_title
   end
 
   def show

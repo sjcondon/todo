@@ -17,8 +17,10 @@
     
     <% if session[:current_user_id] %> 
     <nav>
+    <div class="login">
     You are logged in as: <%= @current_user.email %>
     | <a href = "/logout">Logout</a>
+    </div>
     </nav>
     <% end %>
 
