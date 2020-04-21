@@ -1,5 +1,9 @@
 <h1> Sign up</h1>
 
+<% if flash[:notice] %>
+<h2><%= flash[:notice] %></h2>
+<% end %>
+
 <!-- <form action="/signup" method="POST>
 
     <imput type="submit" value="Signup" />
@@ -9,13 +13,15 @@
 <%= form_tag("/signup") do %>
     <div class="links">
         <%= label_tag "Email" %>
-        <%= text_field_tag :"user[email]",'', :class => "new todo", :placeholder => "Signup with your email" %>
+        <%= email_field_tag :"user[email]",'', :class => "new todo", :placeholder => "Sign up with your email" %>
         <%= label_tag "Password" %>
         <%= password_field_tag :"user[password]" %>
         
     </div>
     <div class="links">
         <%= submit_tag "Sign up"%>
-        <p> <%= button_to "Home", root_path %> </p>
+    
     <div>
     <% end %>
+
+    <%= link_to "Home", root_path %>

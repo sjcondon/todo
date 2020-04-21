@@ -15,7 +15,7 @@
 
 
 <div class="links">
-	<%= button_to 'Edit', edit_todo_list_path(@todo_list), method: :get %> 
+	<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> 
 	<%= button_to 'Delete', todo_list_path(@todo_list), method: :delete %>
-  	<%= button_to 'Back', todo_lists_path, method: :get%>
+  	<%= link_to 'Back', todo_lists_path%>
 </div>
