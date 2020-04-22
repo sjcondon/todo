@@ -10,9 +10,10 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save 
-            redirect_to "/login"
-        else
-            redirect_to "/signup", :notice => "Password Cannot be Blank"
+            session[:current_user_id] = @user.id
+            redirect_to "/", :notice => "Sign up Successful"
+        else 
+            render :new
         end
     end
  

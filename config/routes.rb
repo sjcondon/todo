@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:create, :new]
+
   resources :sessions, only: [:create, :new, :destroy]
   
   get '/signup', to: 'users#new'

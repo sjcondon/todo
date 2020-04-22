@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
             redirect_to "/"
         else
             redirect_to "/login", :notice => "Cannot find that email"
+        
         end
     end
 

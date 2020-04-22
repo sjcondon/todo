@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Todo</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track' => true %>
   
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
@@ -11,14 +11,19 @@
 <body>
     
     <div class="container"> 
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
     <%= yield %>
     </div>
     
     
-    <% if session[:current_user_id] %> 
+    <% if login %> 
     <nav>
     <div class="login">
-    You are logged in as: <%= @current_user.email %>
+    You are logged in as: <%= current_user.email %>
     | <a href = "/logout">Logout</a>
     </div>
     </nav>
