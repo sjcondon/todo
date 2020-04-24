@@ -8,10 +8,10 @@ class SessionsController < ApplicationController
         if @user
             #logging in a user
             login(@user)
-            redirect_to "/"
+            redirect_to "/", :notice => "Log in Successful"
         else
-            redirect_to "/login", :notice => "Cannot find that email"
-        
+            # redirect_to "/login", :notice => "Cannot find that email"
+            render :new
         end
     end
 

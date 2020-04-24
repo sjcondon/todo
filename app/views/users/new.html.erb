@@ -1,11 +1,5 @@
 <h1> Sign up</h1>
 
-<!-- <form action="/signup" method="POST>
-
-    <imput type="submit" value="Signup" />
-
-    </form> -->
-
 <%= form_tag("/signup") do %>
     <div class="links">
     <% if @user.errors.any? %>
@@ -14,7 +8,7 @@
         <% end %> 
     <% end %>
     <%= label_tag "Email" %>
-    <%= email_field_tag :"user[email]",'', :class => "new todo", :placeholder => "Sign up with your email" %>
+    <%= email_field_tag :"user[email]",'', :class => "new todo", :placeholder => "Email Required" %>
     <%= label_tag "Password" %>
     <%= password_field_tag :"user[password]" %>
     </div>
@@ -23,5 +17,3 @@
     
     <div>
     <% end %>
-
-    <%= link_to "Home", root_path %>

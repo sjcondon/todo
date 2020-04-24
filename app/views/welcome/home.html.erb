@@ -5,7 +5,7 @@
 
 <div class="links">
 <p> <%= link_to "Home", root_path %> </p>
-<% if !login %>
+<% if !login? %>
     <p> <%= link_to "Sign Up", signup_path  %> </p>
     <p> <%= link_to "Log In", login_path  %> </p>
 <%end%>

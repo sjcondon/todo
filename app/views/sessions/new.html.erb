@@ -1,16 +1,22 @@
 <h1>Log in</h1>
 
 
-<%= form_tag("/sessions") do %>
-    <p>
+<%= form_tag("/login") do %>
+<div class="links">
+    <% if @user.errors.any? %>
+        <% @user.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p> 
+        <% end %> 
+    <% end %> 
+
         <%= label_tag "Email" %>
-        <%= email_field_tag "email",'', :class => "new todo", :placeholder => "Login with your email" %>
+        <%= email_field_tag "email",'', :class => "new todo", :placeholder => "Email Required" %>
         <%= label_tag "Password" %>
         <%= password_field_tag "password" %>
-    </p>
+</div>
     <div class="links">
         <%= submit_tag "Login"%>
         <br><%= link_to "Home", root_path %> </br>
     </div>
-        
-    <% end %>
+        <% end %>
+    
