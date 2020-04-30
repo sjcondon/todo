@@ -10,28 +10,28 @@
 </head>
 <body>
     
-    <div class="container"> 
+  <div class="container"> 
     <% flash.each do |type, msg| %>
-      <div>
+    <div>
         <%= msg %>
-      </div>
+    </div>
     <% end %>
     <%= yield %>
-    </div>
+  </div>
     
     
     <% if login? %> 
     <nav>
-    <div class="login">
-    You are logged in as: <%= current_user.email %>
-    | <a href = "/logout">Logout</a>
-    </div>
+      <div class="login">
+        You are logged in as: <%= current_user.email %>
+        | <a href = "/logout">Logout</a>
+      </div>
     </nav>
     <% end %>
 
     
     
-    </body>
+  </body>
 
-    </html>
+</html>
     

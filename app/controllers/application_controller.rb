@@ -19,7 +19,7 @@ private
   end
   
     def login?
-    !current_user.nil?  
+      !current_user.nil?  
     end 
  
   end

@@ -5,15 +5,16 @@ class SessionsController < ApplicationController
 
     def create
         if auth_hash = request.env["omniauth.auth"]
-            #log in via OAuth
-            raise auth_hash.inspect
-            request.env["omniauth.auth"]["email"] #person is trusted and coming from github
-            @user = User.find_by(:email => request.env["omniauth.auth"]["email"])
-            #they have already been loggin
+            @user = User.find_or_create_by_omniauth(auth_hash)
+            sessions[:current_user.id] = current_user.id
+            
+            redirect_to "/"
+           
         else
             #normal login with un and pw
             @user = User.find_by(:email => params[:email]) #find user by email typed in
-            if @user
+            if @user && user.authentication (params [:password])
+                sessions[:current_user.id] = current_user.id
                 #logging in a user
                 login(@user)
                 redirect_to "/", :notice => "Log in Successful"
@@ -22,6 +23,7 @@ class SessionsController < ApplicationController
                 render :new
         end
     end
+end
 
     def destroy
         reset_session

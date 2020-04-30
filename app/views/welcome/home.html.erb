@@ -1,13 +1,13 @@
 <div class="jumbotron">
 
 <h1 class="display-4">Welcome to the Homepage </h1>
-<p class="lead"> Feel free to make a todo list</p>
+    <p class="lead"> Feel free to make a todo list</p>
 
 <div class="links">
 <p> <%= link_to "Home", root_path %> </p>
-<% if !login? %>
-    <p> <%= link_to "Sign Up", signup_path  %> </p>
-    <p> <%= link_to "Log In", login_path  %> </p>
+    <% if !login? %>
+        <p> <%= link_to "Sign Up", signup_path  %> </p>
+        <p> <%= link_to "Log In", login_path  %> </p>
 <%end%>
     <p> <%= link_to "Create Todo List", new_todo_list_path  %>  </p>
 </div>

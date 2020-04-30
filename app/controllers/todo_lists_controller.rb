@@ -35,14 +35,14 @@ class TodoListsController < ApplicationController
       else
         render :edit
       end
-    end
+  end
 
 
   
   def destroy
     @todo_list.destroy
     redirect_to new_todo_list_path
-    end
+  end
   
 
   private
