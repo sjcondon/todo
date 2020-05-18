@@ -3,10 +3,8 @@
 
 <%= form_tag("/login") do %>
 <div class="links">
-    <% if @user.errors.any? %>
-        <% @user.errors.full_messages.each do |msg| %>
-        <p><%= msg %></p> 
-        <% end %> 
+    <% if @error %>
+        <p><%= @error %></p> 
     <% end %> 
 
         <%= label_tag "Email" %>
