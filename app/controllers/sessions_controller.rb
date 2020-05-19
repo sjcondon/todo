@@ -23,7 +23,8 @@ class SessionsController < ApplicationController
                     redirect_to "/", :notice => "Log in Successful"
             else
                 # redirect_to "/login", :notice => "Cannot find that email"
-                    render :new
+                @error = "Incorrect Password"  
+                render :new
             end      
         else 
             @error = "Couldn't find user, please try again"

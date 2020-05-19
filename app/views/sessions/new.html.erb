@@ -10,12 +10,12 @@
         <%= label_tag "Email" %>
         <%= email_field_tag "email",'', :class => "new todo", :placeholder => "Email Required" %>
         <%= label_tag "Password" %>
-        <%= password_field_tag "password" %>
+        <%= password_field_tag "password",'', :class => "new todo", :placeholder => "Password Required" %>
 </div>
     <div class="links">
         <%= submit_tag "Login"%>
-        <br><%= link_to "Home", root_path %> </br>
-        <br><%= link_to "Log in via Github", "/auth/github" %></br>
+        <p><%= link_to "Home", root_path %> </p>
+        <p><%= link_to "Log in via Github", "/auth/github" %></p>
     </div>
         <% end %>
     
