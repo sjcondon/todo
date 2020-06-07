@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :todo_lists
   resources :todo_lists do
-    resources :todo_items do
+    resources :todo_items do #loop through and will give the correct item (nested route)
     	member do
     		get :complete
       end
