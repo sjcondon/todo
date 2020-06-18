@@ -40,7 +40,6 @@ class TodoListsController < ApplicationController
 
   
   def destroy
-    binding.pry
     @todo_list.destroy
     redirect_to new_todo_list_path
   end
