@@ -1,15 +1,10 @@
 Rails.application.routes.draw do
-  resources :todo_lists
+  root "welcome#home"
+
   resources :todo_lists do
-    resources :todo_items do #loop through and will give the correct item (nested route)
-    	member do
-    		get :complete
+    resources :todo_items            #loop through and will give the correct item (nested route)
+    
       end
-    end
-  end
-
-
-  resources :sessions, only: [:create, :new, :destroy]
   
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
@@ -17,11 +12,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   get '/auth/:provider/callback', to: 'sessions#create'
-  
-  post '/users', to: 'users#create'
-  post '/sessions', to: "sessions#create"
 
-  
-  root "welcome#home"
-end
+
+  end
+
 

@@ -10,12 +10,14 @@
 		<%= button_to "Delete", todo_list_todo_item_path(@todo_list, item), method: "delete" %>
 	</div>
 	<% end %>
-	<%= render partial: 'todo_items/form', locals: {todo_item: TodoItem.new(todo_list_id: params[:todo_list_id])} %>  
+	
 </div>
 
 
 <div class="links">
-	<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> 
-	<%= button_to 'Delete', todo_list_path(@todo_list), method: :delete %>
-  	<%= link_to 'Back', todo_lists_path%>
+    <p><%= link_to 'New Todo Item', new_todo_list_todo_item_path(@todo_list) %></p> 
+	<p><%= link_to 'Edit', edit_todo_list_path(@todo_list) %></p> 
+	<p><%= button_to 'Delete', todo_list_path(@todo_list), method: :delete %></p>
+	  <p><%= link_to 'Back', todo_lists_path%></p>
+	  <p><%= link_to "Home", root_path %></p>
 </div>

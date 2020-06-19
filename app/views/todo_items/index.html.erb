@@ -1,7 +1,5 @@
-#list
-#write out items
 
-<% @todo_items.each do |todo_item| %>
+<% @todo_items.todo_items.order(:title).each do |todo_item| %>
     <div class="index_row clearfix">
       <h2 class="todo_item_content"><%= link_to todo_item.content, todo_list_todo_item_path(todo_item.todo_list, todo_item)%></h2>
       
@@ -9,6 +7,6 @@
   <% end %>
   
   <div class="links">
-    <p><%= link_to "New Todo Item", new_todo_list_todo_item_path %></p>
+    <p><%= link_to "New Todo Item", new_todo_list_todo_item_path(@todo_items)%></p>
     <p><%= link_to "Home", root_path %></p>
   </div>
