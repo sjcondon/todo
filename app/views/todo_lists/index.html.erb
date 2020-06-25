@@ -1,6 +1,4 @@
-<%= form_tag("/todo_lists", method: "get") do %>
- <%= select_tag "todo_lists", options_from_collection_for_select(@todo_lists,"id", "title")%>
-<% @todo_lists.each do |todo_list| %>
+ <% @todo_lists.each do |todo_list| %>
   <h2 class="todo_list_title"><%= link_to todo_list.title, todo_list_path(todo_list)%></h2>
     <p class="todo_list_sub_title"><%= todo_list.description %></p>
   </div>
@@ -10,4 +8,3 @@
   <p><%= link_to "New Todo List", new_todo_list_path %></p>
   <p><%= link_to "Home", root_path %></p>
 </div>
-<% end %>
